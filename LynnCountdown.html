@@ -1,0 +1,64 @@
+<html>
+<script>
+//----------------- resizes the gadget display surface
+function DoInit() {
+    document.body.style.width = 705;
+    document.body.style.height= 250;
+    document.body.style.margin=0;
+	 
+}
+	</script>
+	
+	
+	<head>
+		<link rel="stylesheet" href="css/flipclock.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="js/flipclock/libs/base.js"></script>
+		<script src="js/flipclock/flipclock.js"></script>
+		<script src="js/flipclock/faces/dailycounter.js"></script>		
+	</head>
+		
+      <style>
+            
+        </style>
+		
+	<body>
+		<div class="clock" style="margin:2em;"></div>
+		  <g:background id="imgBackground" src="images/backround.png">
+        
+    </g:background>
+	
+	<link rel="stylesheet" href="css/flipclock.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="js/flipclock/libs/base.js"></script>
+		<script src="js/flipclock/flipclock.js"></script>
+		<script src="js/flipclock/faces/dailycounter.js"></script>	
+		<script type="text/javascript">
+			var clock;
+
+			$(document).ready(function() {
+
+				// Grab the current date
+				var currentDate = new Date();
+
+				// Set some date in the future. In this case, it will be launch of new facility 
+				var futureDate  = new Date(currentDate.getFullYear() + 1, 1, 1);
+
+				// Calculate the difference in seconds between the future and current date
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+				// Instantiate a coutdown FlipClock
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter',
+					countdown: true
+					
+				});
+			});
+		</script>
+		<body onload="DoInit();">
+	</body>
+</html>
